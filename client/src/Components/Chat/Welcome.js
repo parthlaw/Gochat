@@ -25,9 +25,11 @@ const Welcome = () => {
                 >
                   Get Started
                 </button>
-                <button className="git">
-                  GitHub <i className="fa fa-github"></i>
-                </button>
+                <a href="https://github.com/parthlaw/Gochat">
+                  <button className="git">
+                    GitHub <i className="fa fa-github"></i>
+                  </button>
+                </a>
               </div>
             </div>
           </>
