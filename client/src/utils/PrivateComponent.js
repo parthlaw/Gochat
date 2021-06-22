@@ -26,12 +26,9 @@ const PrivateComponent = (props) => {
     async function Run() {
       await Auth();
     }
-    console.log(user);
     if (!user || !user.Rooms || !user.User) {
-      console.log("user");
       Run();
     }
-    //console.log(user);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
   const handleLogout = async (e) => {

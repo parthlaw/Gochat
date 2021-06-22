@@ -8,7 +8,6 @@ import Loader from "./utils/Loader/Loader";
 import Welcome from "./Components/Chat/Welcome";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Footer from "./Components/Footer/Footer";
 import Particles from "react-particles-js";
 function App() {
   return (
@@ -58,7 +57,6 @@ function App() {
           </Route>
           <PrivateRoute component={Welcome} exact path="/chat" />
           <PrivateRoute component={Chat} exact path="/chat/:id" />
-          <Footer />
         </div>
       </BrowserRouter>
       <ToastContainer />

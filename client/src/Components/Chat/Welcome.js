@@ -3,6 +3,7 @@ import { useHistory } from "react-router";
 import { ContextProvider } from "../../context";
 import PrivateComponent from "../../utils/PrivateComponent";
 import "./Welcome.css";
+import Footer from "../Footer/Footer";
 const Welcome = () => {
   const history = useHistory();
   const { user } = useContext(ContextProvider);
@@ -37,6 +38,7 @@ const Welcome = () => {
           <h1>Loading</h1>
         )}
       </div>
+      <Footer />
     </PrivateComponent>
   );
 };

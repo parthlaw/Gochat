@@ -17,7 +17,6 @@ const Chat = () => {
   const history = useHistory();
   useEffect(() => {
     if (id) {
-      console.log("use", id);
       if (user && user.Rooms) {
         const data = user.Rooms.find((r) => {
           return r.ID == id;
@@ -33,7 +32,6 @@ const Chat = () => {
   }, [id, user]);
   const sock = useRef();
   useEffect(() => {
-    console.log("user", user);
     setLoading(true);
     if (user && user.User) {
       const ws = new WebSocket(
@@ -55,8 +53,6 @@ const Chat = () => {
   useEffect(() => {
     console.log("connected");
     if (sock.current && sock.current.readyState === WebSocket.OPEN) {
-      console.log("open", sock.current.OPEN);
-      console.log("connecting", sock.current.CONNECTING);
       if (id) {
         const message = {
           action: "join-room",
@@ -72,7 +68,6 @@ const Chat = () => {
     setSidebar(!sidebar);
   };
   const handleSidebarClick = (data) => {
-    console.log("chat", data);
     setCurrentRoom({
       room: data.Name,
       time: data.time,

@@ -32,21 +32,18 @@ const Content = ({ handleSidebar, room, ws }) => {
     });
     // const getData = async () => {
     //   const data = await getRoomMessages({ RoomID: parseInt(id) });
-    //   console.log("data", data);
     // };
     // getData();
   }, [id]);
   useEffect(() => {
     if (ws) {
       ws.onmessage = function (e) {
-        console.log(e.data);
         const json = JSON.parse(e.data);
         if (json.action === "room-joined") {
           setId(json.target.id);
           setLoading(false);
         }
         if (json.action === "send-message") {
-          console.log(currentRoom);
           setMessages((m) => [
             ...m,
             {

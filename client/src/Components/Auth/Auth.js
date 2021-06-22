@@ -5,6 +5,7 @@ import { ContextProvider } from "../../context";
 import "./Auth.css";
 import Login from "./Login";
 import SignUp from "./SignUp";
+import Footer from "../Footer/Footer";
 const Auth = () => {
   const [login, setLogin] = useState(true);
   const { user, setUser, setAuth, setLoading } = useContext(ContextProvider);
@@ -32,13 +33,16 @@ const Auth = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <section className="forms-section">
-      <h1 className="section-title">GOCHAT</h1>
-      <div className="forms">
-        <Login login={login} handleChange={handleChange} />
-        <SignUp login={login} handleChange={handleChange} />
-      </div>
-    </section>
+    <>
+      <section className="forms-section">
+        <h1 className="section-title">GOCHAT</h1>
+        <div className="forms">
+          <Login login={login} handleChange={handleChange} />
+          <SignUp login={login} handleChange={handleChange} />
+        </div>
+      </section>
+      <Footer />
+    </>
   );
 };
 
