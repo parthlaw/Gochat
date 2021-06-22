@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font: 16px sans-serif;
+}
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+:root {
+  --background: #050509;
+  --secondary: #170e5f;
+  --paragraph: #b8c1ec;
+  --headline: #fffffe;
+  --button: #eebbc3;
+  --button-text: #232946;
+  --text: #b0acae;
+  --border: #56382e;
+  --message-box: #121629;
+}
+body {
+  margin: 0;
+  font-family: Roboto, -apple-system, "Helvetica Neue", "Segoe UI", Arial,
+    sans-serif;
+  background: var(--background);
+  margin-right: 1em;
+}
+html,
+body {
+  height: 100% !important;
+}
+.logout {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  color: #fff;
+  background-color: #7f5af0;
+  padding: 10px;
+  cursor: pointer;
+}
+.logout.spinning {
+  color: #fff;
+  background-color: #7f5af0;
+  padding-right: 40px;
+}
+.logout.spinning:after {
+  content: "";
+  right: 6px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-radius: 50%;
+  -webkit-animation: rotate360 0.5s infinite linear, exist 0.1s forwards ease;
+  animation: rotate360 0.5s infinite linear, exist 0.1s forwards ease;
+}
+.logout.spinning:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  right: 6px;
+  top: 50%;
+  position: absolute;
+  border: 2px solid #000000;
+  border-right: 3px solid #27ae60;
+  -webkit-animation: rotate360 0.5s infinite linear, exist 0.1s forwards ease;
+  animation: rotate360 0.5s infinite linear, exist 0.1s forwards ease;
+}
+@-webkit-keyframes rotate360 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate360 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes exist {
+  100% {
+    width: 15px;
+    height: 15px;
+    margin: -8px 5px 0 0;
+  }
+}
+@keyframes exist {
+  100% {
+    width: 15px;
+    height: 15px;
+    margin: -8px 5px 0 0;
+  }
+}
+.particle {
+  top: 0;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+}

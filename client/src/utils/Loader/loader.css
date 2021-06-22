@@ -1,0 +1,65 @@
+.hide {
+  display: none;
+  visibility: hidden;
+}
+.loading {
+  position: fixed;
+  z-index: 100;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  --size: 48px;
+  --primary-color: rgb(255, 14, 14);
+
+  height: var(--size);
+  width: var(--size);
+}
+@keyframes background-move {
+  from {
+    background-position-x: calc(var(--size) * 2);
+  }
+  to {
+    background-position-x: var(--size);
+  }
+}
+.three {
+  border: calc(var(--size) / 8) solid var(--primary-color);
+  border-radius: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+.three:before,
+.three:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: calc(var(--size) * 2);
+  height: calc(var(--size) / 2);
+  background: radial-gradient(
+    ellipse,
+    transparent calc(var(--size) / 6),
+    var(--primary-color) calc(var(--size) / 6),
+    var(--primary-color) calc(var(--size) / 3),
+    transparent calc(var(--size) / 3)
+  );
+  background-size: var(--size) var(--size);
+  background-repeat: repeat-x;
+  top: calc(0px - calc(var(--size) / 8));
+  left: calc(0px - calc(var(--size) / 8));
+  animation: background-move 1s linear infinite;
+  transform: scale(0.8);
+  transform-origin: left bottom;
+}
+.three:after {
+  top: calc(calc(var(--size) / 2) - calc(var(--size) / 8));
+  left: calc(
+    calc(var(--size) / 9.5) - calc(var(--size) / 2) - calc(var(--size) / 8)
+  );
+  background-position-y: calc(0px - calc(var(--size) / 2));
+  transform-origin: left top;
+}
