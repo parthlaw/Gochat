@@ -47,7 +47,7 @@ func main() {
 	mux.HandleFunc("/hello", func(rw http.ResponseWriter, r *http.Request) { rw.Write([]byte("Hello World")) })
 	mux.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) { fmt.Println("Request"); ws.ServeWs(wsServer, w, r) })
 	mux.Handle("/", routes.Handlers(db))
-	c := cors.New(cors.Options{AllowedOrigins: []string{"http://localhost:3000", "https://bako.vercel.app", "https://gochat.vercel.app"}, AllowCredentials: true, AllowedHeaders: []string{"Content-Type", "Bearer", "Bearer ", "content-type", "Origin", "Accept"}})
+	c := cors.New(cors.Options{AllowedOrigins: []string{"http://localhost:3000", "https://bako.vercel.app", "https://gochat.vercel.app", "https://gochat.parthlaw.tech"}, AllowCredentials: true, AllowedHeaders: []string{"Content-Type", "Bearer", "Bearer ", "content-type", "Origin", "Accept"}})
 	handler := c.Handler(mux)
 	port := os.Getenv("PORT")
 	if port == "" {
